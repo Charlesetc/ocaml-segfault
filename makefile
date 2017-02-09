@@ -1,7 +1,7 @@
 build:
-	ocamlc -a pear/grape.ml -o pear/grape.cma
-	ocamlc -I pear -pack pear/grape.cma -o pear.cma
-	ocamlc pear.cma test.ml -o test.byte
+	ocamlc -c -for-pack pear pear/grape.ml -o pear/grape.cmo
+	ocamlc -I pear -pack pear/grape.cmo -o pear.cmo
+	ocamlc pear.cmo test.ml -o test.byte
 
 clean:
 	rm *.cm*
